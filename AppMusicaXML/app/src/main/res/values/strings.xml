@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">AppMusica</string>
-    <string name="grupoCancion">Ludwig van Beethoven</string>
-    <string name="NombreCancion">La 5º Sinfonia</string>
-    <string name="duracionInicio">1:15</string>
-    <string name="duracionFinal">3:00</string>
-</resources>
