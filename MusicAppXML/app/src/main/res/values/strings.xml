@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppMusica</string>
+    <string name="app_name">MusicApp</string>
     <string name="grupoCancion">Ludwig van Beethoven</string>
     <string name="NombreCancion">La 5º Sinfonia</string>
     <string name="duracionInicio">1:15</string>

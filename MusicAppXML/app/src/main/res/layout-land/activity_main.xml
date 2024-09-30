@@ -115,8 +115,8 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="62dp"
-        android:layout_height="60dp"
+        android:layout_width="82dp"
+        android:layout_height="80dp"
         android:background="@drawable/botones"
         android:importantForAccessibility="no"
         android:src="@android:drawable/ic_media_play"
@@ -129,8 +129,8 @@
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="62dp"
-        android:layout_height="60dp"
+        android:layout_width="72dp"
+        android:layout_height="70dp"
         android:background="@drawable/botones"
         android:importantForAccessibility="no"
         android:src="@android:drawable/ic_media_previous"
@@ -143,8 +143,8 @@
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="62dp"
-        android:layout_height="60dp"
+        android:layout_width="72dp"
+        android:layout_height="70dp"
         android:background="@drawable/botones"
         android:importantForAccessibility="no"
         android:src="@android:drawable/ic_media_next"
@@ -171,8 +171,8 @@
 
     <ImageButton
         android:id="@+id/imageButton5"
-        android:layout_width="62dp"
-        android:layout_height="60dp"
+        android:layout_width="72dp"
+        android:layout_height="70dp"
         android:background="@drawable/botones"
         android:importantForAccessibility="no"
         android:src="@android:drawable/ic_menu_agenda"
@@ -185,8 +185,8 @@
 
     <ImageButton
         android:id="@+id/imageButton6"
-        android:layout_width="62dp"
-        android:layout_height="60dp"
+        android:layout_width="72dp"
+        android:layout_height="70dp"
         android:background="@drawable/botones"
         android:importantForAccessibility="no"
         android:src="@android:drawable/ic_menu_sort_by_size"
@@ -199,8 +199,8 @@
 
     <ImageButton
         android:id="@+id/imageButton7"
-        android:layout_width="62dp"
-        android:layout_height="60dp"
+        android:layout_width="72dp"
+        android:layout_height="70dp"
         android:background="@drawable/botones"
         android:importantForAccessibility="no"
         android:src="@android:drawable/ic_menu_set_as"
@@ -213,8 +213,8 @@
 
     <ImageButton
         android:id="@+id/imageButtonPause"
-        android:layout_width="62dp"
-        android:layout_height="60dp"
+        android:layout_width="82dp"
+        android:layout_height="80dp"
         android:background="@drawable/botones"
         android:importantForAccessibility="no"
         android:src="@android:drawable/ic_media_pause"
