@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
@@ -46,28 +45,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SimpleContinuousSlider(valor : Float, valor2 : Boolean) {
+fun SimpleContinuousSlider(valor : Float) {
     val range = 0f..100f
     var selection by remember { mutableFloatStateOf(valor) }
-    if(!valor2) {
-        Slider(
-            modifier = Modifier.width(250.dp),
-            value = selection,
-            valueRange = range,
-            onValueChange = {},
-            thumb = {
-            }
-        )
-    } else {
         Slider(
             modifier = Modifier.width(250.dp),
             value = selection,
             valueRange = range,
             onValueChange = { selection = it }
         )
-    }
 }
 
 @Preview(
@@ -119,7 +106,7 @@ fun AppMusicaVertical(reproduciendo: Boolean, onReproduciendoChange: (Boolean) -
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text("1:25", style = MaterialTheme.typography.titleLarge)
-                SimpleContinuousSlider(25f, false)
+                SimpleContinuousSlider(25f)
                 Text("3:25", style = MaterialTheme.typography.titleLarge)
             }
 
@@ -186,7 +173,7 @@ fun AppMusicaVertical(reproduciendo: Boolean, onReproduciendoChange: (Boolean) -
                         modifier = Modifier.size(40.dp)
                     )
                 }
-                SimpleContinuousSlider(70f, true)
+                SimpleContinuousSlider(70f)
             }
 
             Row(
@@ -264,7 +251,7 @@ fun AppMusicaHorizontal(reproduciendo: Boolean, onReproduciendoChange: (Boolean)
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text("1:25", style = MaterialTheme.typography.titleLarge)
-                    SimpleContinuousSlider(25f, false)
+                    SimpleContinuousSlider(25f)
                     Text("3:25", style = MaterialTheme.typography.titleLarge)
                 }
                 Row(
@@ -329,7 +316,7 @@ fun AppMusicaHorizontal(reproduciendo: Boolean, onReproduciendoChange: (Boolean)
                             modifier = Modifier.size(40.dp)
                         )
                     }
-                    SimpleContinuousSlider(70f, true)
+                    SimpleContinuousSlider(70f)
                 }
 
                 Row(
