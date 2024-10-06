@@ -3,7 +3,6 @@ package com.example.appmusica
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
-import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -16,21 +15,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        botonPlay = findViewById(R.id.imageButton)
+        botonPlay = findViewById(R.id.imageButtonPlay)
         botonPause = findViewById(R.id.imageButtonPause)
 
         botonPlay.setOnClickListener {
             reproduciendo = true
-            updateButtonVisibility()
+            botonVisible()
         }
 
         botonPause.setOnClickListener {
             reproduciendo = false
-            updateButtonVisibility()
+            botonVisible()
         }
     }
 
-    private fun updateButtonVisibility() {
+    private fun botonVisible() {
         if (!reproduciendo) {
             botonPlay.visibility = View.VISIBLE
             botonPause.visibility = View.INVISIBLE
@@ -48,6 +47,6 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         reproduciendo = savedInstanceState.getBoolean("reproduciendo", false)
-        updateButtonVisibility()
+        botonVisible()
     }
 }
