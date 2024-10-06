@@ -8,8 +8,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
@@ -46,25 +46,25 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun SimpleContinuousSlider(valor : Float) {
+fun SimpleContinuousSlider(valor: Float) {
     val range = 0f..100f
     var selection by remember { mutableFloatStateOf(valor) }
-        Slider(
-            modifier = Modifier.width(250.dp),
-            value = selection,
-            valueRange = range,
-            onValueChange = { selection = it }
-        )
+    Slider(
+        modifier = Modifier.width(250.dp),
+        value = selection,
+        valueRange = range,
+        onValueChange = { selection = it }
+    )
 }
 
+//@Preview(
+//    showBackground = true,
+//    showSystemUi = true,
+//    device = "id:pixel_8_pro"
+//)
 @Preview(
-    showBackground = true,
     showSystemUi = true,
-    device = "spec:width=411dp,height=891dp,dpi=420,isRound=false,chinSize=0dp,orientation=portrait"
-)
-@Preview(
-    showSystemUi = true,
-    device = "spec:width=411dp,height=891dp,dpi=420,isRound=false,chinSize=0dp,orientation=landscape"
+    device = "spec:width=448dp,height=998dp,dpi=420,isRound=false,chinSize=0dp,orientation=landscape"
 )
 @Composable
 fun AppMusicaEstado() {
@@ -72,13 +72,14 @@ fun AppMusicaEstado() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
-            AppMusicaHorizontal(reproduciendo) {
-                    nuevoEstado -> reproduciendo = nuevoEstado
+            AppMusicaHorizontal(reproduciendo) { nuevoEstado ->
+                reproduciendo = nuevoEstado
             }
         }
+
         else -> {
-            AppMusicaVertical(reproduciendo) {
-                    nuevoEstado -> reproduciendo = nuevoEstado
+            AppMusicaVertical(reproduciendo) { nuevoEstado ->
+                reproduciendo = nuevoEstado
             }
         }
     }
@@ -88,7 +89,6 @@ fun AppMusicaEstado() {
 fun AppMusicaVertical(reproduciendo: Boolean, onReproduciendoChange: (Boolean) -> Unit) {
     AppMusicaComposeTheme {
         Column(
-            modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -96,7 +96,7 @@ fun AppMusicaVertical(reproduciendo: Boolean, onReproduciendoChange: (Boolean) -
                 painter = painterResource(R.drawable.descarga),
                 contentDescription = "imagen",
                 contentScale = ContentScale.Fit,
-                modifier = Modifier.size(300.dp, 400.dp),
+                modifier = Modifier.size(425.dp, 500.dp),
             )
             Text("La 5º Sinfonia", style = MaterialTheme.typography.titleLarge)
             Text("Ludwig van Beethoven", style = MaterialTheme.typography.titleLarge)
@@ -223,18 +223,21 @@ fun AppMusicaVertical(reproduciendo: Boolean, onReproduciendoChange: (Boolean) -
 fun AppMusicaHorizontal(reproduciendo: Boolean, onReproduciendoChange: (Boolean) -> Unit) {
     AppMusicaComposeTheme {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(30.dp),
+            modifier = Modifier
+                .fillMaxWidth(0.95f)
+                .fillMaxHeight(),
+            horizontalArrangement = Arrangement.End,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.weight(0.5f)
-            ){
+                modifier = Modifier.weight(1f)
+            ) {
                 Image(
                     painter = painterResource(R.drawable.descarga),
                     contentDescription = "imagen",
                     contentScale = ContentScale.Fit,
-                    modifier = Modifier.size(250.dp)
+                    modifier = Modifier.size(500.dp, 350.dp)
                 )
                 Text("La 5º Sinfonia", style = MaterialTheme.typography.titleLarge)
                 Text("Ludwig van Beethoven", style = MaterialTheme.typography.titleMedium)
@@ -244,7 +247,7 @@ fun AppMusicaHorizontal(reproduciendo: Boolean, onReproduciendoChange: (Boolean)
                 verticalArrangement = Arrangement.spacedBy(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
 
-            ) {
+                ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly,
